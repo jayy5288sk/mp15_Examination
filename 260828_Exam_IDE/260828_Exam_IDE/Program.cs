@@ -6,8 +6,6 @@ class Program
     
     static void Main(string[] args)
     {
-        int menuNumber = ConsoleInput.ReadIntInRange("메뉴 번호 : ", 1, 8);
-        int payLeast = ConsoleInput.ReadIntAtLeast("받은 금액 : ", 0);
         
     }
 }
