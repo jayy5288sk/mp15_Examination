@@ -15,8 +15,11 @@ public class Drink : Menu
         int _intDrinkName = ConsoleInput.ReadIntInRange(": ", 1, 2);
         
         DrinkName = (DrinkName)_intDrinkName;
+        
+        Console.Clear();
 
-        int picked = ConsoleInput.ReadIntInRange($"{DrinkName}을 몇 개 구매하십니까?", 1, 10);
+        Console.WriteLine($"{DrinkName}을 몇 개 구매하십니까?");
+        int picked = ConsoleInput.ReadIntInRange($": ", 1, 10);
         
         if (_intDrinkName == 1)
         {
@@ -27,6 +30,7 @@ public class Drink : Menu
             totalCost = picked * 2500;
         }
         
+        Console.Clear();
         Console.WriteLine($"{DrinkName} {picked}개 {totalCost}원 입니다.");
         
         return totalCost;

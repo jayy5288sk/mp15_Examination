@@ -6,14 +6,16 @@ public class SelectCategory
     public SelectCategory()
     {
         Console.WriteLine($"어서오세요. {SHOP_NAME}입니다.");
+        Console.WriteLine();
     }
     
     public Category _selectCategory;
-    
+    public int _costApply;
     public void ChooseCategory()
     {
+        Console.WriteLine("어떤 것을 고르시겠습니까?");
         Console.WriteLine("1.버거 2.사이드 3.음료");
-        int _intSelected = ConsoleInput.ReadIntInRange("어떤 것을 고르시겠습니까?: ", 1, 3);
+        int _intSelected = ConsoleInput.ReadIntInRange(": ", 1, 3);
         
         _selectCategory = (Category)_intSelected;
         
@@ -22,17 +24,17 @@ public class SelectCategory
         if (_intSelected == 1)
         {
             Burger burger = new Burger();
-            burger.TotalMenuCost();
+            _costApply = burger.TotalMenuCost();
         }
         else if (_intSelected == 2)
         {
             Side side = new Side();
-            side.TotalMenuCost();
+            _costApply = side.TotalMenuCost();
         }
         else
         {
             Drink drink = new Drink();
-            drink.TotalMenuCost();
+            _costApply = drink.TotalMenuCost();
         }
     }
 }

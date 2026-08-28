@@ -21,8 +21,11 @@ public class Side : Menu
         int _intSideName = ConsoleInput.ReadIntInRange(": ", 1, 3);
         
         SideName = (SidesName)_intSideName;
+        
+        Console.Clear();
 
-        int picked = ConsoleInput.ReadIntInRange($"{SideName}을 몇 개 구매하십니까?", 1, 10);
+        Console.WriteLine($"{SideName}을 몇 개 구매하십니까?");
+        int picked = ConsoleInput.ReadIntInRange($": ", 1, 10);
         
         if (_intSideName == 1)
         {
@@ -37,6 +40,7 @@ public class Side : Menu
             totalCost = picked * 6000;
         }
         
+        Console.Clear();
         Console.WriteLine($"{SideName} {picked}개 {totalCost}원 입니다.");
         
         return totalCost;
