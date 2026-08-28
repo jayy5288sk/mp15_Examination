@@ -9,11 +9,21 @@ public class SelectCategory
     
     public Category _selectCategory;
     
-    public Category ChooseCategory()
+    public void ChooseCategory()
     {
         int _intSelected = ConsoleInput.ReadIntInRange("어떤 것을 고르시겠습니까?: ", 1, 3);
+        
         _selectCategory = (Category)_intSelected;
         
-        return _selectCategory;
+        if (_selectCategory == Category.버거)
+        {
+            Burger burger = new Burger();
+            burger.TotalMenuCost();
+        }
+        
+        else
+        {
+            Console.WriteLine("품절");
+        }
     }
 }

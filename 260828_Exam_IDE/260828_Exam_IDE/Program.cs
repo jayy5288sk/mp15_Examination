@@ -10,7 +10,10 @@ class Program
         Console.WriteLine($"어서오세요. {SHOP_NAME}입니다.");
         
         SelectCategory selectCategory = new SelectCategory();
+        
         selectCategory.ChooseCategory();
+        
+        
     }
     
 }

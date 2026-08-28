@@ -7,7 +7,7 @@ public abstract class Menu
     public Menu()
     {}
 
-    public abstract void TotalMenuCost();
+    public abstract int TotalMenuCost();
     
     /*public Category CheckMenuCategory()
     {
