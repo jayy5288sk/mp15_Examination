@@ -1,15 +1,19 @@
 public abstract class Menu
 {
-    protected string MenuName;
+    protected int MenuName;
     protected int MenuCost;
     protected Category MenuCategory;
 
-    public Menu(string name, int cost, Category category)
-    {
-        MenuName = name;
-        MenuCost = cost;
-        MenuCategory = category;
-    }
+    public Menu()
+    {}
 
     public abstract void TotalMenuCost();
+    
+    /*public Category CheckMenuCategory()
+    {
+        int category = 0;
+        ConsoleInput.ReadIntInRange("항목을 선택해주세요.", 1, 3);
+        MenuCategory = (Category)category;
+        return MenuCategory;
+    }*/
 }
