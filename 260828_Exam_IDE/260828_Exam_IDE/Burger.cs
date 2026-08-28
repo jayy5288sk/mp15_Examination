@@ -3,6 +3,7 @@ public class Burger : Menu
     public BurgerName BurgerName;
     public int burgerCount;
     public int totalCost;
+    
     public Burger()
     {
         Console.WriteLine("어떤 버거를 선택하십니까?");
@@ -46,5 +47,21 @@ public class Burger : Menu
         string name = BurgerName.ToString();
 
         return name;
+    }
+
+    public int MenuEach
+    {
+        get
+        {
+            return burgerCount;
+        }
+    }
+    
+    public int MenuCost
+    {
+        get
+        {
+            return totalCost;
+        }
     }
 }

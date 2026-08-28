@@ -56,4 +56,19 @@ public class Side : Menu
 
         return name;
     }
+    public int MenuEach
+    {
+        get
+        {
+            return sideCount;
+        }
+    }
+    
+    public int MenuCost
+    {
+        get
+        {
+            return totalCost;
+        }
+    }
 }

@@ -1,6 +1,7 @@
 public class Drink : Menu
 {
     public int totalCost;
+    public int drinkCount;
     public DrinkName DrinkName;
     
     public Drink()
@@ -19,19 +20,19 @@ public class Drink : Menu
         Console.Clear();
 
         Console.WriteLine($"{DrinkName}을 몇 개 구매하십니까?");
-        int picked = ConsoleInput.ReadIntInRange($": ", 1, 10);
+        drinkCount = ConsoleInput.ReadIntInRange($": ", 1, 10);
         
         if (_intDrinkName == 1)
         {
-            totalCost = picked * 2000;
+            totalCost = drinkCount * 2000;
         }
         else
         {
-            totalCost = picked * 2500;
+            totalCost = drinkCount * 2500;
         }
         
         Console.Clear();
-        Console.WriteLine($"{DrinkName} {picked}개 {totalCost}원");
+        Console.WriteLine($"{DrinkName} {drinkCount}개 {totalCost}원");
         
         return totalCost;
     }
@@ -41,5 +42,21 @@ public class Drink : Menu
         string name = DrinkName.ToString();
 
         return name;
+    }
+    
+    public int MenuEach
+    {
+        get
+        {
+            return drinkCount;
+        }
+    }
+    
+    public int MenuCost
+    {
+        get
+        {
+            return totalCost;
+        }
     }
 }

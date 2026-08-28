@@ -15,14 +15,11 @@ class Program
             string name = selectCategory._selectMenuName;
             Console.WriteLine();
             
-            Console.WriteLine("계속 쇼핑하시겠습니까?");
+            Console.WriteLine($"계속 쇼핑하시겠습니까?");
+            Console.WriteLine("1.YES 2.NO");
             int keepShopping = ConsoleInput.ReadIntInRange(": ", 1, 2);
-            
-            if (keepShopping == 1)
-            {
-                continue;
-            }
-            else
+            Console.Clear();
+            if (keepShopping == 2)
             {
                 isNotEnd = false;
             }

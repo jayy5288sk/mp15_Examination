@@ -1,25 +1,27 @@
 using System.Collections.Generic;
 
-public class ShoppingCart<T>
+public class ShoppingCart<T> where T : Menu
 {
-    public T[] items = new T[] { };
-    public int itemCount = 1;
-    public int totalCost = 0;
+    public int itemCost = 0;
+    public int totalCost;
     public string[] itemName;
+    private T[] TArray;
+    private int InStorage;
 
-    public ShoppingCart()
+    public ShoppingCart(int capacity)
     {
-        Console.WriteLine("=== 장바구니 ===");
+        TArray = new T[capacity];
     }
-    public void Add(T item)
+    public int AddCost(int itemCount)
     {
-        items[itemCount] = item;
-        itemCount++;
+        itemCost *= itemCount;
+        totalCost = itemCost;
+        return totalCost;
     }
 
     public void AllRemove()
     {
-        itemCount = 0;
+        
     }
 
     public void BuyItemsInCart(int money)
