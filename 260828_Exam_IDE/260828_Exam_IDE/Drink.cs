@@ -1,5 +1,6 @@
 public class Drink : Menu
 {
+    public int totalCost;
     public DrinkName DrinkName;
     
     public Drink()
@@ -11,7 +12,6 @@ public class Drink : Menu
     
     public override int TotalMenuCost()
     {
-        int totalCost = 0;
         int _intDrinkName = ConsoleInput.ReadIntInRange(": ", 1, 2);
         
         DrinkName = (DrinkName)_intDrinkName;
@@ -31,8 +31,15 @@ public class Drink : Menu
         }
         
         Console.Clear();
-        Console.WriteLine($"{DrinkName} {picked}개 {totalCost}원 입니다.");
+        Console.WriteLine($"{DrinkName} {picked}개 {totalCost}원");
         
         return totalCost;
+    }
+    
+    public string ConvertName()
+    {
+        string name = DrinkName.ToString();
+
+        return name;
     }
 }

@@ -2,6 +2,7 @@ public class Burger : Menu
 {
     public BurgerName BurgerName;
     public int burgerCount;
+    public int totalCost;
     public Burger()
     {
         Console.WriteLine("어떤 버거를 선택하십니까?");
@@ -12,7 +13,6 @@ public class Burger : Menu
     
     public override int TotalMenuCost()
     {
-        int totalCost = 0;
         int _intBurgerName = ConsoleInput.ReadIntInRange(": ", 1, 3);
         
         BurgerName = (BurgerName)_intBurgerName;
@@ -36,8 +36,15 @@ public class Burger : Menu
         }
         
         Console.Clear();
-        Console.WriteLine($"{BurgerName} {burgerCount}개 {totalCost}원 입니다.");
+        Console.WriteLine($"{BurgerName} {burgerCount}개 {totalCost}원");
         
         return totalCost;
+    }
+
+    public string ConvertName()
+    {
+        string name = BurgerName.ToString();
+
+        return name;
     }
 }

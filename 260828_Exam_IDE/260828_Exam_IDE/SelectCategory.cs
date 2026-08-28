@@ -3,14 +3,17 @@ using System;
 public class SelectCategory
 {
     private const string SHOP_NAME = "버거킥";
+    
+    public Category _selectCategory;
+    public int _costApply;
+    public string _selectMenuName;
+    
     public SelectCategory()
     {
         Console.WriteLine($"어서오세요. {SHOP_NAME}입니다.");
         Console.WriteLine();
     }
     
-    public Category _selectCategory;
-    public int _costApply;
     public void ChooseCategory()
     {
         Console.WriteLine("어떤 것을 고르시겠습니까?");
@@ -25,16 +28,19 @@ public class SelectCategory
         {
             Burger burger = new Burger();
             _costApply = burger.TotalMenuCost();
+            _selectMenuName = burger.ConvertName();
         }
         else if (_intSelected == 2)
         {
             Side side = new Side();
             _costApply = side.TotalMenuCost();
+            _selectMenuName = side.ConvertName();
         }
         else
         {
             Drink drink = new Drink();
             _costApply = drink.TotalMenuCost();
+            _selectMenuName = drink.ConvertName();
         }
     }
 }
