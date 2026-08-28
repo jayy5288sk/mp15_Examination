@@ -31,7 +31,8 @@ public class SelectCategory
         }
         else
         {
-            Console.WriteLine("품절");
+            Drink drink = new Drink();
+            drink.TotalMenuCost();
         }
     }
 }
